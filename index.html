@@ -3,36 +3,92 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>You Died Again Games</title>
-<style>
-  :root { --bg: #fafaf7; --text: #1f2328; --muted: #5a6270; --accent: #2f7d4f; --line: #e3e3dc; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #15181d; --text: #e6e8eb; --muted: #a0a8b4; --accent: #6cc58f; --line: #2a2f37; }
-  }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
-  h1 { font-size: 2.2em; line-height: 1.15; margin: 0 0 8px; }
-  h2 { font-size: 1.4em; margin: 0 0 4px; }
-  .tagline { color: var(--muted); margin: 0 0 2.5em; }
-  .game { border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
-  .game p { margin: 0.5em 0; }
-  a { color: var(--accent); }
-  footer { margin-top: 3em; color: var(--muted); font-size: 0.9em; }
-</style>
+<title>You Died Again Games – small, hard games for your phone</title>
+<meta name="description" content="You Died Again Games is a small independent UK studio making quick, bright, one-finger mobile games. Our first game, Flick the Armadillo, is coming soon to Google Play.">
+<link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/styles.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="You Died Again Games">
+<meta property="og:description" content="Small, hard games for your phone. Our first game, Flick the Armadillo, is coming soon.">
+<meta property="og:image" content="https://youdiedagain.com/assets/img/flick-banner-1.jpg">
+<meta property="og:url" content="https://youdiedagain.com/">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/img/logo-wide.jpg" alt="You Died Again Games" width="1200" height="400"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="flick-the-armadillo/">Flick the Armadillo</a>
+      <a href="mailto:support@youdiedagain.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-<h1>You Died Again Games</h1>
-<p class="tagline">Small, hard games for your phone.</p>
+  <div class="wrap">
 
-<section class="game">
-  <h2>Flick the Armadillo</h2>
-  <p>Flick a rolled-up armadillo up through a world full of spikes. How far can you climb?</p>
-  <p>Coming soon to Google Play.</p>
-  <p><a href="privacy.html">Privacy policy</a></p>
-</section>
+    <section class="hero">
+      <a class="hero-image" href="flick-the-armadillo/">
+        <img src="assets/img/flick-banner-1.jpg" alt="Flick the Armadillo: a rolled-up armadillo flicked through the air towards a row of spikes" width="1024" height="512">
+      </a>
+      <div class="hero-text">
+        <h1>Small, hard games for your phone.</h1>
+        <p>We make quick, bright, one-finger games that are easy to pick up and very hard to put down. You will die. You will go again.</p>
+        <div class="hero-actions">
+          <a class="btn" href="flick-the-armadillo/">Meet Flick the Armadillo</a>
+          <span class="pill">Coming soon to Google Play</span>
+        </div>
+      </div>
+    </section>
 
-<footer>Contact: <a href="mailto:support@youdiedagain.com">support@youdiedagain.com</a></footer>
+    <section class="section" id="games">
+      <h2>Our games</h2>
+      <div class="games">
+        <a class="card game-card" href="flick-the-armadillo/">
+          <img src="assets/img/flick-square.jpg" alt="Flick the Armadillo" width="512" height="512">
+          <div class="body">
+            <h3>Flick the Armadillo</h3>
+            <p>Flick a rolled-up armadillo up through a world full of spikes. How far can you climb?</p>
+          </div>
+        </a>
+        <div class="card coming-card">
+          <div>
+            <h3>More games on the way</h3>
+            <p>We’re just getting started.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="card about">
+        <img src="assets/img/studio-logo.jpg" alt="" width="512" height="512">
+        <div>
+          <h2>About us</h2>
+          <p>You Died Again Games is a small independent studio in the UK. We love games that are simple to learn, tricky to master and over in a flash, so you can always squeeze in one more go.</p>
+          <p>Got a question, found a bug or just want to say hello? Email us at <a href="mailto:support@youdiedagain.com">support@youdiedagain.com</a>.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
 </main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="flick-the-armadillo/">Flick the Armadillo</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="mailto:support@youdiedagain.com">support@youdiedagain.com</a>
+    </div>
+    <p class="legal">© 2026 You Died Again Games Ltd. Registered in England and Wales, company number 17514312. Registered office: 4 Gray Close, Henbury, Bristol, BS10 7SZ, United Kingdom.</p>
+  </div>
+</footer>
+
 </body>
 </html>

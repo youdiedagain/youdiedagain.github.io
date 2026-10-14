@@ -1,0 +1,208 @@
+/* You Died Again Games — shared styles for every page. */
+
+@font-face {
+  font-family: "Lilita One";
+  src: url("fonts/LilitaOne-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #fff8ee;          /* warm off-white page */
+  --surface: #ffffff;
+  --text: #2a1d14;        /* dark brown, like the game's lettering */
+  --muted: #6b5a4c;
+  --line: #f0e2cf;
+  --orange: #f7931e;
+  --orange-dark: #d9700a;
+  --pink: #e8336d;
+  --teal: #19b5b0;
+  --shadow: 0 10px 30px rgba(74, 45, 20, 0.12);
+  --radius: 18px;
+  --heading: "Lilita One", "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;
+  --body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 var(--body);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--pink); }
+a:hover { color: var(--orange-dark); }
+
+h1, h2, h3 {
+  font-family: var(--heading);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.4em;
+}
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.6rem, 3.6vw, 2.2rem); }
+h3 { font-size: 1.35rem; }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  background: #fff;                 /* matches the logo's white background */
+  border-bottom: 4px solid var(--orange);
+  box-shadow: 0 2px 12px rgba(74, 45, 20, 0.08);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.brand img { height: 120px; width: auto; }
+
+.nav { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.nav a {
+  font-family: var(--heading);
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+.nav a:hover { background: var(--line); color: var(--text); }
+.nav a[aria-current="page"] { background: var(--orange); color: #fff; }
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--heading);
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+  background: var(--pink);
+  padding: 12px 26px;
+  border-radius: 999px;
+  box-shadow: 0 4px 0 #b3204f;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.btn:hover { color: #fff; transform: translateY(-1px); box-shadow: 0 5px 0 #b3204f; }
+.btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #b3204f; }
+.btn.secondary { background: var(--teal); box-shadow: 0 4px 0 #0f7f7b; }
+.btn.secondary:hover { box-shadow: 0 5px 0 #0f7f7b; }
+
+.pill {
+  display: inline-block;
+  font-family: var(--heading);
+  font-size: 1rem;
+  background: var(--teal);
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 999px;
+}
+
+/* ---------- Sections ---------- */
+
+main { padding: 36px 0 56px; }
+
+.hero {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+.hero-image {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #000;
+}
+.hero-image img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; }
+.hero-text p { font-size: 1.15rem; color: var(--muted); margin: 0 0 18px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1.4fr 1fr; gap: 40px; }
+}
+
+.section { margin-top: 56px; }
+.section > .intro { color: var(--muted); max-width: 680px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.games { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); margin-top: 20px; }
+.game-card { text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: transform 0.12s ease; }
+.game-card:hover { transform: translateY(-4px); color: inherit; }
+.game-card img { aspect-ratio: 1 / 1; object-fit: cover; }
+.game-card .body { padding: 16px 18px 20px; }
+.game-card p { margin: 6px 0 0; color: var(--muted); }
+
+.coming-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 260px;
+  padding: 24px;
+  background: repeating-linear-gradient(45deg, #fff, #fff 14px, #fff3e2 14px, #fff3e2 28px);
+}
+.coming-card h3 { color: var(--muted); }
+
+.features { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); margin-top: 20px; }
+.feature { padding: 20px; }
+.feature .icon { font-size: 1.8rem; line-height: 1; margin-bottom: 8px; }
+.feature p { margin: 0; color: var(--muted); }
+
+.about { display: grid; gap: 24px; align-items: center; padding: 24px; }
+.about img { width: 160px; border-radius: 50%; margin: 0 auto; }
+@media (min-width: 700px) { .about { grid-template-columns: 180px 1fr; } }
+
+.gallery { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 20px; }
+.gallery img { border-radius: var(--radius); box-shadow: var(--shadow); aspect-ratio: 2 / 1; object-fit: cover; width: 100%; }
+
+/* ---------- Long text pages (privacy) ---------- */
+
+.prose { max-width: 760px; }
+.prose h2 { margin-top: 1.6em; padding-top: 0.6em; border-top: 2px dashed var(--line); }
+.prose .meta { color: var(--muted); margin-top: -0.2em; }
+.prose table { border-collapse: collapse; width: 100%; margin: 0.5em 0; font-size: 0.95em; background: var(--surface); }
+.prose th, .prose td { text-align: left; vertical-align: top; padding: 8px 10px; border: 1px solid var(--line); }
+.prose li { margin: 0.3em 0; }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--text);
+  color: #f3e6d6;
+  padding: 32px 0 40px;
+  font-size: 0.92rem;
+}
+.site-footer a { color: #ffc277; }
+.site-footer a:hover { color: #fff; }
+.site-footer .links { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 14px; font-family: var(--heading); font-size: 1.05rem; }
+.site-footer .legal { color: #cdb9a3; margin: 0; }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 640px) {
+  .site-header .wrap { flex-direction: column; }
+  .brand img { height: 84px; }
+  .nav { justify-content: center; gap: 2px; }
+  .nav a { font-size: 1rem; padding: 6px 10px; }
+  body { font-size: 16px; }
+}

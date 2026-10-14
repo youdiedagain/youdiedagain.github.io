@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flick the Armadillo – get the game</title>
+<meta name="description" content="Get Flick the Armadillo, a one-finger mobile game from You Died Again Games.">
+<link rel="icon" type="image/png" href="../assets/img/favicon-64.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/styles.css">
+<!-- Link previews when the share link is posted in chats and social media. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Flick the Armadillo">
+<meta property="og:description" content="Flick a rolled-up armadillo up through a world full of spikes. Can you beat my score?">
+<meta property="og:image" content="https://youdiedagain.com/assets/img/flick-banner-1.jpg">
+<meta property="og:url" content="https://youdiedagain.com/flick/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script>
+  // The link the game shares (https://youdiedagain.com/flick).
+  // Android phones go straight to Google Play and iPhones to the App Store, once the game is live there.
+  // Everyone else (computers, or before launch) sees this page.
+  //
+  // AT LAUNCH: set PLAY_LIVE to true. WHEN THE IPHONE VERSION IS OUT: paste its App Store link into APP_STORE_URL.
+  var PLAY_LIVE = false;
+  var PLAY_URL = "https://play.google.com/store/apps/details?id=com.dan.flickthearmadillo";
+  var APP_STORE_URL = "";
+
+  (function () {
+    var ua = navigator.userAgent || "";
+    var isAndroid = /Android/i.test(ua);
+    var isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    if (isAndroid && PLAY_LIVE) location.replace(PLAY_URL);
+    else if (isIOS && APP_STORE_URL) location.replace(APP_STORE_URL);
+  })();
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../assets/img/logo-wide.jpg" alt="You Died Again Games" width="1200" height="400"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="../flick-the-armadillo/">Flick the Armadillo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-image">
+        <img src="../assets/img/flick-banner-1.jpg" alt="Flick the Armadillo" width="1024" height="512">
+      </div>
+      <div class="hero-text">
+        <h1>Think you can beat my score?</h1>
+        <p>Flick a rolled-up armadillo up through a world full of spikes. How far can you climb?</p>
+        <div class="hero-actions" id="stores">
+          <span class="pill" id="coming-soon">Coming soon to Google Play</span>
+        </div>
+        <p style="margin-top:18px"><a href="../flick-the-armadillo/">Find out more about the game</a></p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="links">
+      <a href="../index.html">Home</a>
+      <a href="../privacy.html">Privacy policy</a>
+      <a href="mailto:support@youdiedagain.com">support@youdiedagain.com</a>
+    </div>
+    <p class="legal">© 2026 You Died Again Games Ltd. Registered in England and Wales, company number 17514312. Registered office: 4 Gray Close, Henbury, Bristol, BS10 7SZ, United Kingdom.</p>
+  </div>
+</footer>
+
+<script>
+  // On this page (computers, or before launch): show a button for each store the game is live on.
+  (function () {
+    var stores = document.getElementById("stores");
+    var added = false;
+    if (PLAY_LIVE) { stores.insertAdjacentHTML("beforeend", '<a class="btn" href="' + PLAY_URL + '">Get it on Google Play</a>'); added = true; }
+    if (APP_STORE_URL) { stores.insertAdjacentHTML("beforeend", '<a class="btn secondary" href="' + APP_STORE_URL + '">Download on the App Store</a>'); added = true; }
+    if (added) document.getElementById("coming-soon").remove();
+  })();
+</script>
+
+</body>
+</html>
